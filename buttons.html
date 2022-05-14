@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+	<title>J-Template</title>
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./build/css/main.css" />
+</head>
+
+<body>
+
+	<header class="header">
+	</header>
+
+   
+
+   <section class="buttons">
+      <h1 class="h1-title">Buttons</h1>
+      <div class="container">
+
+         <div class="buttons__wrapper">
+            <h2 class="buttons__name">
+               Neon
+            </h2>
+            <div class="buttons__box">
+               <div class="buttons__preview">
+                  
+                  <button class="btn btn--neon btn--height">Submit</button>
+               </div>
+               <div class="buttons__html">
+                  <h3>HTML</h3>
+                  &lt;button class=&quot;btn btn--neon btn--height&quot;&gt;Submit&lt;/button&gt;
+               </div>
+               <div class="buttons__css">
+                  <h3>CSS</h3>
+                  .btn {
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     text-decoration: none;
+                     text-align: center;
+                     //change vars
+                     font-size: 16px;
+                     font-weight: bold;
+                     &amp;--height {
+                         width: 180px;
+                         height: 60px;
+                     }
+                     &amp;--neon {
+                         //vars
+                         $btnNeonColorBg: gray;
+                         $btnNeonTextColor: #fff;
+                         $btnNeonHoverTextColor: gray;
+                         //css
+                         border-color: $btnNeonColorBg;
+                         border-radius: 30px;
+                         color: $btnNeonTextColor;
+                         box-shadow: 0 0 40px 40px $btnNeonColorBg inset, 0 0 0 0 $btnNeonColorBg;
+                         -webkit-transition: all 150ms ease-in-out;
+                         transition: all 150ms ease-in-out;
+                         &amp;:hover {
+                             box-shadow: 0 0 10px 0 $btnNeonColorBg inset, 0 0 10px 4px $btnNeonColorBg;
+                             color: $btnNeonHoverTextColor;
+                         }
+                     }
+                 }
+               </div>
+            </div>
+         </div>
+
+         <div class="buttons__wrapper">
+            <h2 class="buttons__name">
+               Hole
+            </h2>
+            <div class="buttons__box">
+               <div class="buttons__preview">                  
+                  <button class="btn btn--hole btn--height">Submit</button>
+               </div>
+               <div class="buttons__html">
+                  <h3>HTML</h3>
+                  &lt;button class=&quot;btn btn--hole btn--height&quot;&gt;Submit&lt;/button&gt;               </div>
+               <div class="buttons__css">
+                  <h3>CSS</h3>
+                  <div class="button__css-text">
+                     .btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: bold;
+                        &amp;--height {
+                            width: 180px;
+                            height: 60px;
+                        }
+                        &amp;--hole {
+                           $btnHoleBg: orange;
+                           $btnHoleBorder: 2px solid orange;
+                           border-radius: 30px;
+                           -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+                           transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+                           border: $btnHoleBorder;
+                           &amp;:hover {
+                               box-shadow: 0 0 40px 40px $btnHoleBg inset;
+                           }
+                        }
+                    }
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="buttons__wrapper">
+            <h2 class="buttons__name">
+               Book
+            </h2>
+            <div class="buttons__box">
+               <div class="buttons__preview">                  
+                  <button class="btn btn--book btn--height">Submit</button>
+               </div>
+               <div class="buttons__html">
+                  <h3>HTML</h3>
+                  &lt;button class=&quot;btn btn--book btn--height&quot;&gt;Submit&lt;/button&gt;               </div>
+               <div class="buttons__css">
+                  <h3>CSS</h3>
+                  <div class="button__css-text">
+                     .btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: bold;
+                        &amp;--height {
+                            width: 180px;
+                            height: 60px;
+                        }
+                        &amp;--book {
+                           $btnBookBg: yellow;
+                           color: black;
+                           border-color: $btnBookBg;
+                           border-radius: 0;
+                           position: relative;
+                           overflow: hidden;
+                           z-index: 1;
+                           -webkit-transition: color 150ms ease-in-out;
+                           transition: color 150ms ease-in-out;
+                           &amp;:after {
+                               content: &#039;&#039;;
+                               position: absolute;
+                               display: block;
+                               top: 0;
+                               left: 50%;
+                               -webkit-transform: translateX(-50%);
+                               transform: translateX(-50%);
+                               width: 0;
+                               height: 100%;
+                               background: $btnBookBg;
+                               z-index: -1;
+                               -webkit-transition: width 150ms ease-in-out;
+                               transition: width 150ms ease-in-out;
+                           }
+                           &amp;:hover {
+                               color: green;
+                           }
+                           &amp;:hover:after {
+                               width: 100%;
+                           }
+                        }
+                    }
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="buttons__wrapper">
+            <h2 class="buttons__name">
+               Blur
+            </h2>
+            <div class="buttons__box gray-bg">
+               <div class="buttons__preview">                  
+                  <button class="btn btn--height btn--blur">
+                     Submit
+                   </button>
+               </div>
+               <div class="buttons__html">
+                  <h3>HTML</h3>
+                  &lt;button class=&quot;btn btn--blur btn--height&quot;&gt;Submit&lt;/button&gt;               </div>
+               <div class="buttons__css">
+                  <h3>CSS</h3>
+                  <div class="button__css-text">
+                     .btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: bold;
+                        &amp;--height {
+                            width: 180px;
+                            height: 60px;
+                        }
+                        &amp;--blur {
+                        color: #FFF;
+                        transition: all 0.9s;
+                        position: relative;
+                        overflow: hidden;
+                        &amp;:hover {
+                              color: #black;
+                        }
+                        &amp;::before {
+                              content: &#039;&#039;;
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              width: 100%;
+                              height: 100%;
+                              z-index: 1;
+                              background-color: rgba(212, 212, 209, 0.144);
+                              transition: all 0.3s;
+                        }
+                        &amp;:hover::before {
+                              opacity: 0;
+                              transform: scale(0.5, 0.5);
+                        }
+                        &amp;::after {
+                              content: &#039;&#039;;
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              width: 100%;
+                              height: 100%;
+                              z-index: 1;
+                              opacity: 0;
+                              transition: all 0.3s;
+                              border: 1px solid rgba(0, 0, 0, 0.5);
+                              transform: scale(1.2, 1.2);
+                        }
+                        &amp;:hover::after {
+                              opacity: 1;
+                              transform: scale(1, 1);
+                        }
+                        }
+                    }
+                  </div>
+               </div>
+            </div>
+         </div>
+        
+      </div>
+   </section>
+
+
+
+	<footer class="footer">
+
+	</footer>
+
+
+
+
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!-- SlickSlider -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous"></script>
+	<!-- ScrollReveralJS -->
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="./build/js/vendors.js"></script>
+	<script src="./build/js/bundle.js"></script>
+</body>
+
+</html>

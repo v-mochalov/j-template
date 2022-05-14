@@ -1,0 +1,112 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    &--height {
+        width: 180px;
+        height: 60px;
+    }
+    &--blur {
+        color: #FFF;
+        transition: all 0.9s;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+            color: #black;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: rgba(212, 212, 209, 0.144);
+            transition: all 0.3s;
+        }
+        &:hover::before {
+            opacity: 0;
+            transform: scale(0.5, 0.5);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            transform: scale(1.2, 1.2);
+        }
+        &:hover::after {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+    }
+    &--book {
+        $btnBookBg: yellow;
+        color: black;
+        border-color: $btnBookBg;
+        border-radius: 0;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        -webkit-transition: color 150ms ease-in-out;
+        transition: color 150ms ease-in-out;
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            width: 0;
+            height: 100%;
+            background: $btnBookBg;
+            z-index: -1;
+            -webkit-transition: width 150ms ease-in-out;
+            transition: width 150ms ease-in-out;
+        }
+        &:hover {
+            color: green;
+        }
+        &:hover:after {
+            width: 100%;
+        }
+    }
+    &--hole {
+        $btnHoleBg: orange;
+        $btnHoleBorder: 2px solid orange;
+        border-radius: 30px;
+        -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+        transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+        border: $btnHoleBorder;
+        &:hover {
+            box-shadow: 0 0 40px 40px $btnHoleBg inset;
+        }
+    }
+    &--neon {
+        $btnNeonColorBg: green;
+        $btnNeonTextColor: #fff;
+        $btnNeonHoverTextColor: gray;
+        border-color: $btnNeonColorBg;
+        border-radius: 30px;
+        color: $btnNeonTextColor;
+        box-shadow: 0 0 40px 40px $btnNeonColorBg inset, 0 0 0 0 $btnNeonColorBg;
+        -webkit-transition: all 150ms ease-in-out;
+        transition: all 150ms ease-in-out;
+        &:hover {
+            box-shadow: 0 0 10px 0 $btnNeonColorBg inset, 0 0 10px 4px $btnNeonColorBg;
+            color: $btnNeonHoverTextColor;
+        }
+    }
+}

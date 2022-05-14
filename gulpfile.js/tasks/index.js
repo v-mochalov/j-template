@@ -1,0 +1,14 @@
+require('./clean');
+require('./copy');
+require('./deploy');
+require('./php');
+require('./html');
+require('./img');
+require('./scripts');
+require('./serve');
+require('./styles');
+require('./svg');
+require('./vendors');
+require('./watch');
+require('./po2mo');
+require('./avr');
